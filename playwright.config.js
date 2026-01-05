@@ -1,9 +1,11 @@
-import { defineConfig } from '@playwright/test';
+// playwright.config.js
+const { defineConfig } = require('@playwright/test');
 
-export default defineConfig({
+module.exports = defineConfig({
   testDir: './tests',
   use: {
     headless: true,
-    browserName: 'chromium'
-  }
+    screenshot: 'only-on-failure',
+    video: 'retain-on-failure',
+  },
 });
